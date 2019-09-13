@@ -1,0 +1,23 @@
+<h1>Top news for US</h1>
+<hr>
+<div class="container">
+<div class="row">
+        <div class="col-md-4 col-xs-2" *ngFor="let item of news">
+            <div class="inner">
+                <h5>{{ item.title }}</h5>
+                <span class="source-info">source: {{ item.source.name }}</span>
+                <img [src]="item.urlToImage" alt="image not available" class="image-responsive">
+                <div class="description">
+                    <p> {{ item.description }} </p>
+                </div>
+                
+                <button class="btn btn-primary see-more" 
+                        (click)="onClick(item)">
+                        <a >See more </a>
+                </button>
+                
+            </div>
+        </div>
+
+  </div>
+</div>

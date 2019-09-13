@@ -1,0 +1,27 @@
+nav {
+    background-color: #483d3d;
+    color: white;
+    padding-bottom: 0;
+    font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+}
+
+ul {
+    margin-bottom: 0;
+}
+
+li {
+    border-radius: 0.5em 0.5em 0 0;
+}
+li:hover {
+    background-color: #007bff;
+}
+.active-link {
+    border-radius: 0.5em 0.5em 0 0;
+    background-color: #007bff;
+}

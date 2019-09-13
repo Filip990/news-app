@@ -1,13 +1,22 @@
-<nav class="navbar navbar-dark bg-primary">
+<nav class="navbar">
     <div class="container-fluid">
-        <div class="navbar-header">
-            <a href="#" class="navbar-brand">Top News </a>
-            <a href="#" class="navbar-brand">Categories </a>
-            <a href="#" class="navbar-brand">Search </a>
-        </div>
+        <ul class="navbar-header">
+            <li class="navbar-brand"
+            [routerLinkActive]="['active-link']" >
+                <a routerLink="/top-news"> Top News  </a>
+            </li>
+            <li class="navbar-brand"
+                [routerLinkActive]="['active-link']">
+                <a routerLink="/categories"> Categories </a>
+            </li>
+            <li class="navbar-brand"
+                [routerLinkActive]="['active-link']">
+                <a routerLink="/search"> Search </a>
+            </li>
+        </ul>
         <ul class="nav navbar-nav navbar-right">
-                    <li><a style="cursor: pointer;">GB</a></li>
-                    <li><a style="cursor: pointer;">US</a></li>
-                </ul>
+                    <li><a>GB</a></li>
+                    <li><a>US</a></li>
+            </ul>
     </div>
 </nav>
