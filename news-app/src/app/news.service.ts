@@ -17,6 +17,7 @@ export class NewsService {
     this.apiService.getTopHeadlines().subscribe(
       (data) => {
         this.$dataSource.next(data);
+        this.$dataSource.error(err => console.log(err));
       }
     )
   }

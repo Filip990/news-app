@@ -5,7 +5,7 @@
         <div class="col-md-4 col-xs-2" *ngFor="let item of news">
             <div class="inner">
                 <h5>{{ item.title }}</h5>
-                <span class="source-info">source: {{ item.source.name }}</span>
+                <span class="source-info">author: {{ item.author }}</span>
                 <img [src]="item.urlToImage" alt="image not available" class="image-responsive">
                 <div class="description">
                     <p> {{ item.description }} </p>
