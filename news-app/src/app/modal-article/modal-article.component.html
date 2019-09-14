@@ -1,0 +1,16 @@
+<div class="container" style="width: 100%; text-align: center">
+    <div class="col-md-12">
+    <div class="row">
+        <h1>
+            {{ data.title }}
+        </h1>
+        <span class="source-info"> author: {{ data.author }} </span>
+        <hr>
+        <div class="article-content">
+            <img [src]="data.urlToImage" class="rounded">
+            <p>{{ data.content }}</p>
+        </div>
+
+    </div>
+</div>
+</div>
