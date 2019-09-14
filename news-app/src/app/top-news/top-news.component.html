@@ -2,20 +2,20 @@
 <hr>
 <div class="container">
 <div class="row">
-        <div class="col-md-4 col-xs-2" *ngFor="let item of news">
+        <div class="col-md-4 col-xs-2" *ngFor="let article of news">
             <div class="inner">
-                <h5>{{ item.title }}</h5>
-                <span class="source-info">source: {{ item.source.name }}</span>
-                <img [src]="item.urlToImage" alt="image not available" class="image-responsive">
+                <h5>{{ article.title }}</h5>
+                <span class="source-info">source: {{ article.source.name }}</span>
+                <img [src]="article.urlToImage" alt="image not available" class="img-thumbnail">
                 <div class="description">
-                    <p> {{ item.description }} </p>
+                    <p> {{ article.description }} </p>
                 </div>
                 
                 <button class="btn btn-primary see-more" 
-                        (click)="onClick(item)">
+                       (click)="openModal(article)" >
                         <a >See more </a>
                 </button>
-                
+               
             </div>
         </div>
 

@@ -5,9 +5,7 @@
     height: 30em;
     overflow: hidden;
 }
-.inner img {
-    max-width: 100%;
-}
+
 .description {
     max-height: 6em;
     overflow: hidden;
@@ -19,5 +17,6 @@
 
 .see-more {
     position: absolute;
-    bottom: 1em; right: 2em;
+    bottom: 1em;
+    right: 2em;
 }
