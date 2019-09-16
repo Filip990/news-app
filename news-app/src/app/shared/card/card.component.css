@@ -16,6 +16,8 @@
     color: grey;
 }
 
-.see-more {
-    float: right;
+.button-wrapper {
+    position: absolute;
+    bottom: 1em;
+    right: 2em;
 }
