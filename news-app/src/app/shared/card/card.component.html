@@ -1,0 +1,14 @@
+<div class="inner">
+        <h5>{{ article.title }}</h5>
+        <span class="source-info">source: {{ article.source.name }}</span>
+        <img [src]="article.urlToImage" alt="image not available" class="img-thumbnail">
+        <div class="description">
+            <p> {{ article.description }} </p>
+        </div>
+        
+        <button class="btn btn-primary see-more" 
+               (click)="openModal(article)" >
+                <a >See more </a>
+        </button>
+       
+</div>

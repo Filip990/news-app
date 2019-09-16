@@ -2,7 +2,6 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { NewsService } from '../news.service';
-import { ModalArticleComponent } from '../modal-article/modal-article.component';
 
 @Component({
   selector: 'app-top-news',
@@ -11,8 +10,7 @@ import { ModalArticleComponent } from '../modal-article/modal-article.component'
 })
 export class TopNewsComponent implements OnInit, OnDestroy {
 
-  constructor(public newsService: NewsService,
-              private modalService: NgbModal) { }
+  constructor( public newsService: NewsService ) { }
   public news;
   private subscription;
 
@@ -26,16 +24,6 @@ export class TopNewsComponent implements OnInit, OnDestroy {
         }
       }
     )
-  }
-
-  onClick(param) {
-    console.log(param);
-     // TODO: delegate param to child components
-  }
-
-  openModal(article) {
-    const ref = this.modalService.open(ModalArticleComponent);
-    ref.componentInstance.data = article;
   }
 
   ngOnDestroy() {
