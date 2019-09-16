@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { CategoriesComponent } from './categories/categories.component';
 import { SearchComponent } from './search/search.component';
 import { ModalArticleComponent } from './modal-article/modal-article.component';
+import { CardComponent } from './shared/card/card.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ModalArticleComponent } from './modal-article/modal-article.component';
     TopNewsComponent,
     CategoriesComponent,
     SearchComponent,
-    ModalArticleComponent
+    ModalArticleComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

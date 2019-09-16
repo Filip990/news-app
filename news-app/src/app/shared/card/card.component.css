@@ -1,0 +1,21 @@
+
+.inner {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #bfbebe;
+    height: 30em;
+    overflow: hidden;
+}
+
+.description {
+    max-height: 6em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.source-info {
+    color: grey;
+}
+
+.see-more {
+    float: right;
+}

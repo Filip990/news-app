@@ -1,13 +1,17 @@
 <h1>Top news by Category</h1>
 
-<ngb-carousel>
-        <ng-template ngbSlide *ngFor="let item of general">
-          <div class="picsum-img-wrapper">
-            <img [src]="item.urlToImage" alt="Random first slide">
+<div class="container">
+  <ngb-accordion type="light" *ngFor="let categorie of categories; let i = index;">
+    <ngb-panel title="Panel One">
+      <ng-template ngbPanelContent *ngFor="let item of categorie">
+        <div>
+          <div class="row">
+              <div class="col-sm" *ngFor="let item of categorie">
+                <app-card [article]="item" ></app-card>
+              </div>
           </div>
-          <div class="carousel-caption">
-            <h3>{{ item.title }}</h3>
-            <p>{{ item.description }}</p>
-          </div>
-        </ng-template>
-</ngb-carousel>
+        </div>
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
+</div>
