@@ -5,6 +5,7 @@
     border: 1px solid #bfbebe;
     height: 30em;
     overflow: hidden;
+    min-width: 20em;
 }
 
 .description {

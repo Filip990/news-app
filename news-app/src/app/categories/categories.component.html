@@ -2,13 +2,14 @@
 
 
   <ngb-accordion type="light" *ngFor="let category of categories; let i = index;">
-    <ngb-panel title="Panel {{i}}">
+    <ngb-panel title="{{ category.name | uppercase}}">
       <ng-template ngbPanelContent >
-          <div class="row">
-              <div class="col-sm" *ngFor="let item of category">
+          <div class="row" style="flex-wrap: nowrap;">
+              <div class="col-sm" *ngFor="let item of category.property">
                 <app-card [article]="item" ></app-card>
               </div>
           </div>
       </ng-template>
     </ngb-panel>
   </ngb-accordion>
+

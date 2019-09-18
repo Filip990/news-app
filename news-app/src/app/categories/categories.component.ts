@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
 import { NewsService } from '../news.service';
+import { Category } from '../shared/category-model';
 
 @Component({
   selector: 'app-categories',
@@ -13,22 +15,28 @@ export class CategoriesComponent implements OnInit {
     public science;
     public health;
     public technology;
-    public categories = []
+    public categories: Category[];
 
-  constructor(private service: NewsService) { }
+  constructor(private newsService: NewsService) { }
 
   ngOnInit() {
-      this.service.getAllByCategory();
-      this.service.$newsByCategory.subscribe((categories) => {
+      this.newsService.getAllByCategory();
+      this.newsService.$newsByCategory.subscribe((categories) => {
         if(categories) {
 
           [this.general, this.entertainment, this.sport, this.science, this.health, this.technology]
           = categories.map(item => item.articles.slice(0, 5))
-          this.categories = [this.general, this.entertainment, this.sport, this.science, this.health, this.technology]
+          this.categories = [
+            {name: 'general',property: this.general},
+            {name: 'entertainment', property: this.entertainment},
+            {name: 'sport', property: this.sport},
+            {name: 'science', property: this.science},
+            {name: 'health', property: this.health},
+            {name: 'technology', property: this.technology}
+          ]
         } 
       })
   }
-
 
 
 }
