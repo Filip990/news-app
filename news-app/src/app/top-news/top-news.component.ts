@@ -16,7 +16,7 @@ export class TopNewsComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.newsService.getNews();
-     this.subscription = this.newsService.$topHeadlines.subscribe(
+     this.subscription = this.newsService.topHeadlines$.subscribe(
       (data) => {
         if (data) {
           console.log(data)
