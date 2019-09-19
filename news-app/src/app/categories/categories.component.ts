@@ -21,7 +21,7 @@ export class CategoriesComponent implements OnInit {
 
   ngOnInit() {
       this.newsService.getAllByCategory();
-      this.newsService.$newsByCategory.subscribe((categories) => {
+      this.newsService.newsByCategory$.subscribe((categories) => {
         if(categories) {
 
           [this.general, this.entertainment, this.sport, this.science, this.health, this.technology]

@@ -1,1 +1,12 @@
-<p>search works!</p>
+<div class="container">
+    <div class="row">
+        <input (keyup)="searchTerm$.next($event.target.value)">
+    </div>
+    <div class="row" *ngIf="results">
+        
+            <div class="col-md-4 col-xs-2" *ngFor="let item of results.articles" >
+                <app-card [article]="item" ></app-card>
+            </div>
+        
+    </div>
+</div>
