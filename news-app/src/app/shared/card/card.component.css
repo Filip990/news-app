@@ -1,24 +1,16 @@
 
 .inner {
-    margin: 10px;
+    display: flex;
+    flex-flow: column;
     padding: 10px;
     border: 1px solid #bfbebe;
-    height: 30em;
-    overflow: hidden;
-    min-width: 20em;
 }
 
 .description {
-    max-height: 6em;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-.source-info {
-    color: grey;
+    margin: 2%;
 }
 
-.button-wrapper {
-    position: absolute;
-    bottom: 1em;
-    right: 2em;
+
+button {
+    width: 100%
 }

@@ -2,15 +2,14 @@
 
     <h5>{{ article.title }}</h5>
         <span class="source-info">source: {{ article.source.name }}</span>
-        <img [src]="article.urlToImage" alt="image not available" class="img-thumbnail">
+        <img [src]="article.urlToImage || alternativeImg" class="img-thumbnail">
         <div class="description">
-            <p> {{ article.description }} </p>
-        </div>
-        <div class="button-wrapper">
-            <button class="btn btn-primary" 
-                   (click)="openModal(article)" >
+            <p> {{ article.description || 'description unavailable'  }} </p>
+            <div class="button-wrapper">
+                <button class="btn btn-primary" 
+                    (click)="openModal(article)" >
                     <a >See more </a>
-            </button>
-        </div>
-       
+                </button>    
+            </div>
+        </div>       
 </div>
