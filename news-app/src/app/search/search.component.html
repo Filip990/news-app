@@ -1,12 +1,14 @@
+<h1> Search Top News by term</h1>
 <div class="container">
     <div class="row">
-        <input (keyup)="searchTerm$.next($event.target.value)">
+        <input 
+         class="search"
+         (keyup)="search($event.target.value)"
+         placeholder="Search term">
     </div>
     <div class="row" *ngIf="results">
-        
             <div class="col-md-4 col-xs-2" *ngFor="let item of results.articles" >
-                <app-card [article]="item" ></app-card>
+                <app-card [article]="item"></app-card>
             </div>
-        
     </div>
 </div>

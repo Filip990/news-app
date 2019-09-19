@@ -10,15 +10,22 @@ import { Subject } from 'rxjs';
 export class SearchComponent implements OnInit {
 
   constructor(private newsService: NewsService) {
-    this.newsService.search(this.searchTerm$).subscribe(results =>
-       {this.results = results; console.log(this.results)})
-    console.log(this.results)
-   }
+  }
   
   results: Object;
-  searchTerm$ = new Subject<string>()
+  searchTerm$ = new Subject<string>();
 
-  ngOnInit() {
+  ngOnInit() {    
+      this.newsService.search(this.searchTerm$).subscribe(results => this.results = results)
+  }
+
+  search(term) {
+    if(term) {
+      this.searchTerm$.next(term)
+    } else {
+      this.results = {}
+    }
+    
   }
 
 }

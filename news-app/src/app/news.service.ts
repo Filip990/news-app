@@ -12,7 +12,6 @@ export class NewsService {
 
   topHeadlines$ = new BehaviorSubject<any>(new TopNews());
   newsByCategory$ = new BehaviorSubject<any>([]);
-  searchTerm$ = new Subject<string>();
 
   constructor(private apiService: ApiService) { }
 
@@ -31,9 +30,13 @@ export class NewsService {
   }
 
   search(terms: Observable<string>) {
-    return terms.pipe(debounceTime(400)
-      ,distinctUntilChanged()
-      ,switchMap(term => this.apiService.searchEntries(term))
-      )
+      return terms.pipe(debounceTime(800)
+        ,distinctUntilChanged()
+        ,switchMap(term => {
+          if(term) {
+            return this.apiService.searchEntries(term)
+          }
+        })
+        )
   }
 }
