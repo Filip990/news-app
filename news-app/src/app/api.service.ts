@@ -46,7 +46,7 @@ export class ApiService {
   }
 
   changeCountry(country: string) {
-    if (this.location.path() === '/top-news') {
+    if (this.location.path() === '/top-news') { // added for updating separate components
       return this.getTopHeadlines(country);
     } else {
       return this.getTopHeadlinesByCategory(country)

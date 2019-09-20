@@ -34,7 +34,7 @@ export class CategoriesComponent implements OnInit, OnDestroy {
           [this.general, this.entertainment, this.sport, this.science, this.health, this.technology]
           = categories.map(item => item.articles.slice(0, 5)) // return just first 5 articles for every category
 
-          // since the API is not returning 'category' field, set it up here (could've been a model)
+          // since the API is not returning 'category' field, I got it set up here (could've been a model)
           this.categories = [
             {name: 'general',property: this.general},
             {name: 'entertainment', property: this.entertainment},
