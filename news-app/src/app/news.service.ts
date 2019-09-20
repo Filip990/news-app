@@ -39,4 +39,10 @@ export class NewsService {
         })
         )
   }
+
+  changeLanguage(lang: string) {
+    this.apiService.changeCountry(lang).subscribe(
+      data => this.topHeadlines$.next(data)
+      )
+  }
 }

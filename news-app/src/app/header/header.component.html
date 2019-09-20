@@ -1,4 +1,4 @@
-<nav class="navbar">
+<nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
         <ul class="navbar-header">
             <li class="navbar-brand"
@@ -15,8 +15,14 @@
             </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-                    <li><a>GB</a></li>
-                    <li><a>US</a></li>
+                <form class="form-inline">
+                        <button class="btn btn-outline-success" 
+                         type="button"
+                         (click)="changeLanguage('gb')">GB</button>
+                        <button class="btn btn-outline-success"
+                         type="button"
+                         (click)="changeLanguage('us')">US</button>
+                      </form>
             </ul>
     </div>
 </nav>
