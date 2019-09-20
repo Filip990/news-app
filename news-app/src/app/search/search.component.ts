@@ -20,12 +20,7 @@ export class SearchComponent implements OnInit {
   }
 
   search(term) {
-    if(term) {
-      this.searchTerm$.next(term)
-    } else {
-      this.results = {}
-    }
-    
+      this.searchTerm$.next(term);
   }
 
 }

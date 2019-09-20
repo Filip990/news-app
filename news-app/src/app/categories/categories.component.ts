@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import { NewsService } from '../news.service';
 import { Category } from '../shared/category-model';
@@ -8,24 +8,33 @@ import { Category } from '../shared/category-model';
   templateUrl: './categories.component.html',
   styleUrls: ['./categories.component.css']
 })
-export class CategoriesComponent implements OnInit {
+export class CategoriesComponent implements OnInit, OnDestroy {
     public general;
     public entertainment;
     public sport;
     public science;
     public health;
     public technology;
+    
     public categories: Category[];
+    public country: string;
 
-  constructor(private newsService: NewsService) { }
+    // storing our subscription in a variable because unsubscribing directly from BehaviorSubject will break the app 
+    private subscription;
+    
+    constructor(private newsService: NewsService) { }
 
   ngOnInit() {
-      this.newsService.getAllByCategory();
-      this.newsService.newsByCategory$.subscribe((categories) => {
+      this.newsService.getAllByCategory(); // initial call and subscribe
+      this.subscription = this.newsService.newsByCategory$.subscribe((categories) => {
         if(categories) {
+          this.country = this.newsService.country; // assign country
 
+          // es6 desctructuring
           [this.general, this.entertainment, this.sport, this.science, this.health, this.technology]
-          = categories.map(item => item.articles.slice(0, 5))
+          = categories.map(item => item.articles.slice(0, 5)) // return just first 5 articles for every category
+
+          // since the API is not returning 'category' field, set it up here (could've been a model)
           this.categories = [
             {name: 'general',property: this.general},
             {name: 'entertainment', property: this.entertainment},
@@ -36,6 +45,10 @@ export class CategoriesComponent implements OnInit {
           ]
         } 
       })
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
 
