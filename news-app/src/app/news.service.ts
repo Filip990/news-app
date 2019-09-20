@@ -1,10 +1,10 @@
 // A service for delegating the data
 import { Injectable } from '@angular/core';
 import { ApiService } from './api.service';
-import { BehaviorSubject, Subject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 
 import { TopNews } from './shared/top-news-model';
-import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -40,9 +40,7 @@ export class NewsService {
       return terms.pipe(debounceTime(800)
         ,distinctUntilChanged()
         ,switchMap(term => {
-          if(term) {
             return this.apiService.searchEntries(term)
-          }
         })
         )
   }

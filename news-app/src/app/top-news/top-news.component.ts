@@ -12,6 +12,8 @@ export class TopNewsComponent implements OnInit, OnDestroy {
   constructor( public newsService: NewsService ) { }
   public news;
   public country;
+
+  // storing our subscription in a variable because unsubscribing directly from BehaviorSubject will break the app
   private subscription;
 
   ngOnInit() {

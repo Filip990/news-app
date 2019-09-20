@@ -2,7 +2,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Location } from '@angular/common';
-import { forkJoin } from 'rxjs';
+import { forkJoin, of } from 'rxjs';
 import { map } from 'rxjs/operators'; 
 
 
@@ -36,10 +36,13 @@ export class ApiService {
   }
 
   searchEntries(term) {
+    if (term) { // prevent API from firing
       return this.httpClient
             .get(this.baseUrl + this.queryUrl + term + this.apiKey)
-            .pipe(map(res => res));
-
+            .pipe(map(res => res))
+    } else {
+      return of ('') // return string Observable to prevent error (RxJs of method returns an Observable)
+    }
   }
 
   changeCountry(country: string) {
