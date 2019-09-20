@@ -1,5 +1,5 @@
 <div class="container-fluid">
-  <h1>Top news by Category</h1>
+  <h1>Top 5 news by categories from {{ country | uppercase }}</h1>
   <hr>
     <ngb-accordion type="light" *ngFor="let category of categories; let i = index;">
       <ngb-panel title="{{ category.name | uppercase}}">

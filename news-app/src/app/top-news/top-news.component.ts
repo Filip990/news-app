@@ -11,6 +11,7 @@ export class TopNewsComponent implements OnInit, OnDestroy {
 
   constructor( public newsService: NewsService ) { }
   public news;
+  public country;
   private subscription;
 
   ngOnInit() {
@@ -18,6 +19,7 @@ export class TopNewsComponent implements OnInit, OnDestroy {
      this.subscription = this.newsService.topHeadlines$.subscribe(
       (data) => {
         if (data) {
+          this.country = this.newsService.country;
           this.news = data.articles;
         }
       }
