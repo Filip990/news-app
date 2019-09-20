@@ -7,3 +7,15 @@
 .source-info {
     color: grey;
 }
+
+.not-available {
+    color: grey;
+    font-weight: 700;
+}
+
+.slider {
+    max-width: 60%;
+}
+ .slider .carousel-indicators {
+    display: none;
+}

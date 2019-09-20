@@ -1,5 +1,4 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { NewsService } from '../news.service';
 
@@ -19,7 +18,6 @@ export class TopNewsComponent implements OnInit, OnDestroy {
      this.subscription = this.newsService.topHeadlines$.subscribe(
       (data) => {
         if (data) {
-          console.log(data)
           this.news = data.articles;
         }
       }
