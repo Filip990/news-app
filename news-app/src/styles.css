@@ -19,3 +19,8 @@
  .slider .carousel-indicators {
     display: none;
 }
+
+.spin {
+    width: 6rem;
+    height: 6rem;
+}
