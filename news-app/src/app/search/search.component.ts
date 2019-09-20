@@ -8,7 +8,7 @@ import { Subject } from 'rxjs';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-
+  isLoading: boolean = false;
   constructor(private newsService: NewsService) {
   }
   
@@ -16,10 +16,15 @@ export class SearchComponent implements OnInit {
   searchTerm$ = new Subject<string>();
 
   ngOnInit() {    
-      this.newsService.search(this.searchTerm$).subscribe(results => this.results = results)
+      this.newsService.search(this.searchTerm$).subscribe(results =>
+         {
+           this.isLoading = false;
+           this.results = results
+          })
   }
 
   search(term) {
+    this.isLoading = true;
       this.searchTerm$.next(term);
   }
 
