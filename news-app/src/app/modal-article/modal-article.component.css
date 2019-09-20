@@ -2,7 +2,12 @@ img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;  
+  width: 65%;  
+}
+
+.content {
+  margin-top: 2%;
+  line-height: 2;
 }
 
 .no-content {
