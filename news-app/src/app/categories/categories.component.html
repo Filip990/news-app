@@ -1,18 +1,13 @@
-<div class="container-fluid">
+<div >
   <h1>Top 5 news by categories from {{ country | uppercase }}</h1>
   <hr>
-    <ngb-accordion type="light" *ngFor="let category of categories; let i = index;">
-      <ngb-panel title="{{ category.name | uppercase}}">
-        <ng-template ngbPanelContent >
-            <div class="row carousel-container">
-              <ngb-carousel class="slider">
-                <ng-template ngbSlide  *ngFor="let item of category.property">
+    <div *ngFor="let category of categories; let i = index;">
+      <h4 class="category-name"> {{ category.name  | uppercase }}</h4>
+      <div class="category-container">
+                <div class="category-row" *ngFor="let item of category.property">
                     <app-card [article]="item" ></app-card>
-                </ng-template>
-              </ngb-carousel>
-            </div>
-        </ng-template>
-      </ngb-panel>
-    </ngb-accordion>
-</div>
+                </div>
+      </div>
+
+      </div>
 

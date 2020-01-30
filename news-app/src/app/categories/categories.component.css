@@ -1,3 +1,11 @@
-.carousel-container {
-    justify-content: center;
+.category-name {
+    text-align: center;
+    font-weight: 700;
+}
+.category-container {
+    display: flex;
+}
+
+.category-row {
+    max-width: 20%;
 }
